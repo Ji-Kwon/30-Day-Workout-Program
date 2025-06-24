@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./Modal";
 
 export default function WorkoutCard(props) {
   const {
@@ -13,8 +14,11 @@ export default function WorkoutCard(props) {
   const isRestOnly = workoutIndex % 7 === 2;
   const { workout, plyometrics, cardio} = trainingPlan || {};
 
+  const showExerciseDescription = {name: ' ', description: ' '}
+
   return (
     <div className="workout-container">
+    <Modal showExerciseDescription={showExerciseDescription}/>
       <div className="workout-card card">
         <div className="plan-card-header">
           <p>Day {dayNum}</p>
